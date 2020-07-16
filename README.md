@@ -25,3 +25,16 @@ Utilizei python com a técnica de [Ray Casting](https://en.wikipedia.org/wiki/Po
 Faço uma estimativa do tamanho do cômodo, gero uma matrix com todos os ladrilhos e elimino os que não estão dentro do polígono utilizando [Ray Casting](https://en.wikipedia.org/wiki/Point_in_polygon).
 
 Na primeira tentiva eu tentei usar geometria e calcular a posição das linhas no plano, porém o polígono do cômodo podia ser irregular e a quantidade de cálculos a se fazer era muito grande.
+
+As coordenadas do polígono do cômodo começa pelo canto inferior esquerdo, então para desenhar um quadrado por exemplo, usa-se:
+> A: 4
+> B: 4
+> C: 4
+> D: 0
+> E: 4
+
+Onde (0, 0) é o canto inferior esquerdo, (A, 0) é o canto inferior direito, (B, C) é o canto superior direito e (D, E) é o canto superior esquerdo.
+
+Os campos 'F' e 'G' são respectivamente relacionados a largura e ao comprimento do ladrilho. Então para criar um ladrilho retangular, usa-se:
+> F: 2
+> G: 3
